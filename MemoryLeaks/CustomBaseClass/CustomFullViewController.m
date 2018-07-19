@@ -29,6 +29,11 @@
     titleLabel.text          =  self.title;
     [titleLabel sizeToFit];
     titleLabel.center = CGPointMake(self.titleView.frame.size.width / 2.0, self.titleView.frame.size.height / 2.0 + 10);
+
+    if (iPhoneX) {
+        titleLabel.center = CGPointMake(self.titleView.frame.size.width / 2.0,
+                                        self.titleView.frame.size.height / 2.0 + 20);
+    }
     [self.titleView addSubview:titleLabel];
     
     // Bottom line
@@ -38,10 +43,11 @@
     
     // Back btn
     if (self.shouldShowPopBackBtn) {
+        UIImage *image =  [UIImage imageNamed:@"back_icon"];
         UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        backBtn.frame = CGRectMake(0, 0, 60, 40);
-        [backBtn setImage:[UIImage imageNamed:@"back_btn_"] forState:UIControlStateNormal];
-        [backBtn setCenter:CGPointMake(20, self.titleView.frame.size.height/2.0 + 10)];
+        backBtn.frame = CGRectMake(0, 0, image.size.width/2, image.size.height/2);
+        [backBtn setImage:image forState:UIControlStateNormal];
+        [backBtn setCenter:CGPointMake(20, titleLabel.center.y)];
         [backBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self.titleView addSubview:backBtn];
     }

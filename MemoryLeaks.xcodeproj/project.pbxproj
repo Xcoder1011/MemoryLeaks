@@ -195,14 +195,14 @@
 			isa = PBXGroup;
 			children = (
 				BC1EF9F02100784100B8FC9D /* BaseMacro.h */,
-				BC1EF9F12100784100B8FC9D /* BaseViewController.m */,
-				BC1EF9F22100784100B8FC9D /* BaseNavigationController.m */,
-				BC1EF9F32100784100B8FC9D /* BaseContentViewController.m */,
-				BC1EF9F42100784100B8FC9D /* BaseFullContentViewController.m */,
-				BC1EF9F52100784100B8FC9D /* BaseFullContentViewController.h */,
-				BC1EF9F62100784100B8FC9D /* BaseContentViewController.h */,
-				BC1EF9F72100784100B8FC9D /* BaseNavigationController.h */,
 				BC1EF9F82100784100B8FC9D /* BaseViewController.h */,
+				BC1EF9F12100784100B8FC9D /* BaseViewController.m */,
+				BC1EF9F62100784100B8FC9D /* BaseContentViewController.h */,
+				BC1EF9F32100784100B8FC9D /* BaseContentViewController.m */,
+				BC1EF9F52100784100B8FC9D /* BaseFullContentViewController.h */,
+				BC1EF9F42100784100B8FC9D /* BaseFullContentViewController.m */,
+				BC1EF9F72100784100B8FC9D /* BaseNavigationController.h */,
+				BC1EF9F22100784100B8FC9D /* BaseNavigationController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -500,7 +500,8 @@
 			baseConfigurationReference = 8EDBB9E639EA7C480C8C7765 /* Pods-MemoryLeaks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H9J886PZ98;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryLeaks/MemoryPrefixHeader.pch";
 				INFOPLIST_FILE = MemoryLeaks/Info.plist;
@@ -511,6 +512,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wushangkun.MemoryLeaks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "99ae711a-14d8-4cbb-92b9-f5663e97a6b8";
+				PROVISIONING_PROFILE_SPECIFIER = "Any App Dev";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -520,7 +523,8 @@
 			baseConfigurationReference = 745DF47E385B20A8E60C1E8D /* Pods-MemoryLeaks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H9J886PZ98;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MemoryLeaks/MemoryPrefixHeader.pch";
 				INFOPLIST_FILE = MemoryLeaks/Info.plist;
@@ -531,6 +535,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wushangkun.MemoryLeaks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "99ae711a-14d8-4cbb-92b9-f5663e97a6b8";
+				PROVISIONING_PROFILE_SPECIFIER = "Any App Dev";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
