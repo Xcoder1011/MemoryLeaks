@@ -28,9 +28,10 @@
 		BC21B32A21007B39005E0CB7 /* MainListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B32921007B39005E0CB7 /* MainListViewController.m */; };
 		BC21B32D21007B7D005E0CB7 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B32C21007B7D005E0CB7 /* Item.m */; };
 		BC21B33021007B9A005E0CB7 /* MainListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B32F21007B9A005E0CB7 /* MainListCell.m */; };
-		BC21B34021007C5D005E0CB7 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B33F21007C5D005E0CB7 /* TestViewController.m */; };
 		BC21B34221007DB5005E0CB7 /* huakangshaonv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC21B34121007DB5005E0CB7 /* huakangshaonv.ttf */; };
 		BC21B3452100A0D7005E0CB7 /* TimerLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */; };
+		BC21B3482100A603005E0CB7 /* DelegateLeakController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B3472100A603005E0CB7 /* DelegateLeakController.m */; };
+		BC21B34B2100B8FF005E0CB7 /* BlockLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B34A2100B8FF005E0CB7 /* BlockLeakViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,11 +78,13 @@
 		BC21B32C21007B7D005E0CB7 /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		BC21B32E21007B9A005E0CB7 /* MainListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainListCell.h; sourceTree = "<group>"; };
 		BC21B32F21007B9A005E0CB7 /* MainListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainListCell.m; sourceTree = "<group>"; };
-		BC21B33E21007C5D005E0CB7 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		BC21B33F21007C5D005E0CB7 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		BC21B34121007DB5005E0CB7 /* huakangshaonv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = huakangshaonv.ttf; sourceTree = "<group>"; };
 		BC21B3432100A0D7005E0CB7 /* TimerLeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerLeakViewController.h; sourceTree = "<group>"; };
 		BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerLeakViewController.m; sourceTree = "<group>"; };
+		BC21B3462100A603005E0CB7 /* DelegateLeakController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelegateLeakController.h; sourceTree = "<group>"; };
+		BC21B3472100A603005E0CB7 /* DelegateLeakController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelegateLeakController.m; sourceTree = "<group>"; };
+		BC21B3492100B8FF005E0CB7 /* BlockLeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockLeakViewController.h; sourceTree = "<group>"; };
+		BC21B34A2100B8FF005E0CB7 /* BlockLeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockLeakViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,10 +240,12 @@
 		BC21B33121007BDF005E0CB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC21B33E21007C5D005E0CB7 /* TestViewController.h */,
-				BC21B33F21007C5D005E0CB7 /* TestViewController.m */,
+				BC21B3462100A603005E0CB7 /* DelegateLeakController.h */,
+				BC21B3472100A603005E0CB7 /* DelegateLeakController.m */,
 				BC21B3432100A0D7005E0CB7 /* TimerLeakViewController.h */,
 				BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */,
+				BC21B3492100B8FF005E0CB7 /* BlockLeakViewController.h */,
+				BC21B34A2100B8FF005E0CB7 /* BlockLeakViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -351,10 +356,10 @@
 				BC21B32721007AF8005E0CB7 /* CustomFullViewController.m in Sources */,
 				BC21B32621007AF8005E0CB7 /* CustomNormalViewController.m in Sources */,
 				BC21B3452100A0D7005E0CB7 /* TimerLeakViewController.m in Sources */,
+				BC21B34B2100B8FF005E0CB7 /* BlockLeakViewController.m in Sources */,
 				BC1EFA062100784100B8FC9D /* BaseFullContentViewController.m in Sources */,
 				BC1EF9FE2100784100B8FC9D /* UIView+Frame.m in Sources */,
 				BC21B33021007B9A005E0CB7 /* MainListCell.m in Sources */,
-				BC21B34021007C5D005E0CB7 /* TestViewController.m in Sources */,
 				BC21B32A21007B39005E0CB7 /* MainListViewController.m in Sources */,
 				BC1EF9C62100408A00B8FC9D /* ViewController.m in Sources */,
 				BC1EFA032100784100B8FC9D /* BaseViewController.m in Sources */,
@@ -362,6 +367,7 @@
 				BC1EF9D12100408B00B8FC9D /* main.m in Sources */,
 				BC1EFA002100784100B8FC9D /* CustomTableViewCell.m in Sources */,
 				BC1EFA042100784100B8FC9D /* BaseNavigationController.m in Sources */,
+				BC21B3482100A603005E0CB7 /* DelegateLeakController.m in Sources */,
 				BC1EFA012100784100B8FC9D /* UITableView+CustomTableViewCell.m in Sources */,
 				BC1EF9C32100408A00B8FC9D /* AppDelegate.m in Sources */,
 				BC1EFA052100784100B8FC9D /* BaseContentViewController.m in Sources */,

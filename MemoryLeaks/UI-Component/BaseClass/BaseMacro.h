@@ -32,7 +32,7 @@
     #if __has_feature(objc_arc)
     #define kWeakObj(obj)  __weak typeof(obj)  weak##obj = obj;
     #else
-    #define kWeakObj(obj)  __block typeof(obj)  weak##obj = obj;
+    #define kWeakObj(obj)  __block typeof(obj)  block##obj = obj;
     #endif
 #endif
 
@@ -40,9 +40,46 @@
     #if __has_feature(objc_arc)
     #define kStrongObj(obj) __strong __typeof(obj)  obj = weak##obj;
     #else
-    #define kStrongObj(obj) __strong __typeof(obj)  obj = weak##obj;
+    #define kStrongObj(obj)  __typeof(obj)  obj = block##obj;
     #endif
 #endif
+
+
+
+
+
+#ifndef weakify
+    #if DEBUG
+        #if __has_feature(objc_arc)
+        #define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+        #else
+        #define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+        #endif
+    #else
+        #if __has_feature(objc_arc)
+        #define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+        #else
+        #define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+        #endif
+    #endif
+#endif
+
+#ifndef strongify
+    #if DEBUG
+        #if __has_feature(objc_arc)
+        #define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
+        #else
+        #define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
+        #endif
+    #else
+        #if __has_feature(objc_arc)
+        #define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
+        #else
+        #define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+        #endif
+    #endif
+#endif
+
 
 
 /**

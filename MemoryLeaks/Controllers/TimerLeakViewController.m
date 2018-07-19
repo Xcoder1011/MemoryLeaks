@@ -28,7 +28,6 @@
     NSLog(@"timer running....");
 }
 
-
 - (void)dealloc {
     
     [self.timer invalidate];
@@ -36,7 +35,6 @@
 }
 
 
-//// 定时器销毁要写在viewWillDisappear
 //- (void)viewWillDisappear:(BOOL)animated {
 //
 //    [super viewWillDisappear:animated];
@@ -44,9 +42,17 @@
 //    self.timer = nil;
 //}
 
-// 因为 target:self ，也就是引用了当前viewController，导致控制器的引用计数加1，
-// 如果没有将这个NSTimer 销毁，它将一直保留该viewController，无法释放，也就不会调用dealloc方法。
-// 所以，需要在viewWillDisappear之前需要把控制器用到的NSTimer销毁。
 
+/*
+ 
+ 因为 target:self ，也就是引用了当前viewController，导致控制器的引用计数加1， NSTimer会默认对当前self有个强引用
+ 
+ 如果没有将这个NSTimer 销毁，它将一直保留该viewController，无法释放，也就不会调用dealloc方法。
+ 
+ 需要在viewWillDisappear之前需要把控制器用到的NSTimer销毁
+ 
+ repeats:NO 不会引起内存泄漏
+ 
+ */
 
 @end

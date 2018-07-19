@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSArray *colors;
 
+@property (strong, nonatomic) UILabel *titleLabel;
+
 @end
 
 @implementation CustomNormalViewController
@@ -32,12 +34,8 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor     = [UIColor whiteColor];
     titleLabel.text          =  self.title;
-    [titleLabel sizeToFit];
-    titleLabel.center = CGPointMake(self.titleView.frame.size.width / 2.0, self.titleView.frame.size.height / 2.0 + 10);
-    if (iPhoneX) {
-        titleLabel.center = CGPointMake(self.titleView.frame.size.width / 2.0,
-                                        self.titleView.frame.size.height / 2.0 + 20);
-    }
+    _titleLabel = titleLabel;
+    [self updateTitleLabelFrame];
     [self.titleView addSubview:titleLabel];
     
     // Bottom line
@@ -59,6 +57,27 @@
     // GradientLayer
     [self.titleView.layer insertSublayer:self.gradientLayer atIndex:0];
     
+}
+
+- (void)updateTitleLabelFrame {
+    
+    if (self.titleLabel) {
+        [self.titleLabel sizeToFit];
+        self.titleLabel.center = CGPointMake(self.titleView.frame.size.width / 2.0, self.titleView.frame.size.height / 2.0 + 10);
+        if (iPhoneX) {
+            self.titleLabel.center = CGPointMake(self.titleView.frame.size.width / 2.0,
+                                                 self.titleView.frame.size.height / 2.0 + 20);
+        }
+    }
+}
+
+- (void)setTitle:(NSString *)title {
+    
+    [super setTitle:title];
+    if (self.titleLabel) {
+        self.titleLabel.text = title;
+        [self updateTitleLabelFrame];
+    }
 }
 
 - (void)backBtnClick {

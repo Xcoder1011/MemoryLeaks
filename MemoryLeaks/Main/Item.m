@@ -8,6 +8,10 @@
 
 #import "Item.h"
 
+@implementation Student
+
+@end
+
 @implementation Item
 
 + (Item *)itemWithName:(NSString *)name object:(id)object {

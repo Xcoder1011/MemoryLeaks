@@ -8,6 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+@class Student;
+
+@protocol StudentDelegate <NSObject>
+
+@optional
+
+- (void)student:(Student *)stu event:(id)eventData;
+@end
+
+@interface Student : NSObject
+
+@property (nonatomic , weak) id <StudentDelegate> delegate;
+
+@end
+
+
+
 @interface Item : NSObject
 
 @property (nonatomic, strong) NSString *name;
@@ -15,3 +32,8 @@
 
 + (Item *)itemWithName:(NSString *)name object:(id)object;
 @end
+
+
+
+
+

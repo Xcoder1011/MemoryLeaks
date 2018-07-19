@@ -9,8 +9,9 @@
 #import "MainListViewController.h"
 #import "Item.h"
 #import "MainListCell.h"
-#import "TestViewController.h"
 #import "TimerLeakViewController.h"
+#import "DelegateLeakController.h"
+#import "BlockLeakViewController.h"
 
 @interface MainListViewController ()<UITableViewDelegate, UITableViewDataSource, CustomTableViewCellDelegate>
 
@@ -44,12 +45,12 @@
 - (void)loadDataSource {
     
     NSArray * items = @[
-                        [Item itemWithName:@"test" object:[TestViewController class]],
-                        [Item itemWithName:@"2. NSTimer的target" object:[TimerLeakViewController class]],
-                        [Item itemWithName:@"test" object:[TestViewController class]],
-                        [Item itemWithName:@"test" object:[TestViewController class]],
-                        [Item itemWithName:@"test" object:[TestViewController class]],
-                        [Item itemWithName:@"test" object:[TestViewController class]]
+                        [Item itemWithName:@"1. Delegate" object:[DelegateLeakController class]],
+                        [Item itemWithName:@"2. NSTimer" object:[TimerLeakViewController class]],
+                        [Item itemWithName:@"3. Block" object:[BlockLeakViewController class]],
+                        [Item itemWithName:@"test" object:[BlockLeakViewController class]],
+                        [Item itemWithName:@"test" object:[BlockLeakViewController class]],
+                        [Item itemWithName:@"test" object:[BlockLeakViewController class]]
                         ];
     
     for (int i = 0; i < items.count; i ++) {

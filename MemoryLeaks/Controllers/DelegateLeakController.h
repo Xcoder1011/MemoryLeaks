@@ -1,5 +1,5 @@
 //
-//  TestViewController.h
+//  DelegateLeakController.h
 //  MemoryLeaks
 //
 //  Created by shangkun on 2018/7/19.
@@ -8,6 +8,6 @@
 
 #import "CustomNormalViewController.h"
 
-@interface TestViewController : CustomNormalViewController
+@interface DelegateLeakController : CustomNormalViewController
 
 @end
