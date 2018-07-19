@@ -7,16 +7,23 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MainListViewController.h"
+#import "BaseNavigationController.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    MainListViewController *listController = [[MainListViewController alloc] init];
+    BaseNavigationController *rootNav = [[BaseNavigationController alloc] initWithRootViewController:listController navigationBarHidden:YES];
+    self.window.rootViewController = rootNav;
+    
+    [self.window makeKeyWindow];
     return YES;
 }
 
