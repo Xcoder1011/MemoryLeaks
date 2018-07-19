@@ -8,7 +8,6 @@
 
 #import "UITableView+CustomTableViewCell.h"
 #import "CellAdapter.h"
-#import "CustomTableViewCell.h"
 
 @implementation UITableView (CustomTableViewCell)
 
@@ -33,6 +32,18 @@
     cell.indexPath = indexPath;
     cell.cellAdapter = adapter;
     cell.tableView = self;
+    [cell loadContent];
+    return cell;
+}
+
+- (CustomTableViewCell *)dequeueReusableCustomTableViewCellWithCellAdapter:(CellAdapter *)adapter
+                                                                  delegate:(id <CustomTableViewCellDelegate>)delegate
+                                                                 indexPath:(NSIndexPath *)indexPath  {
+    
+    CustomTableViewCell *cell = [self dequeueReusableCellWithIdentifier:adapter.reuseIdentifier];
+    cell.indexPath = indexPath;
+    cell.cellAdapter = adapter;
+    cell.cDelegate = delegate;
     [cell loadContent];
     return cell;
 }

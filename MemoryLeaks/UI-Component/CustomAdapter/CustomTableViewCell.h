@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "CellAdapter.h"
 
+@class CustomTableViewCell;
+
+@protocol CustomTableViewCellDelegate <NSObject>
+
+@optional
+
+- (void)customTableViewCell:(CustomTableViewCell *)cell event:(id)eventData;
+
+@end
 
 @interface CustomTableViewCell : UITableViewCell
 
@@ -23,6 +32,7 @@
 
 @property (nonatomic , weak) NSIndexPath *indexPath;
 
+@property (nonatomic , weak) id <CustomTableViewCellDelegate> cDelegate;
 
 /**
  * Over write in subclass

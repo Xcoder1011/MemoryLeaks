@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomTableViewCell.h"
 
 @class CellAdapter;
-@class CustomTableViewCell;
-@interface UITableView (CustomTableViewCell)
 
+@interface UITableView (CustomTableViewCell)
 
 - (CustomTableViewCell *)dequeueReusableCustomTableViewCellWithCellAdapter:(CellAdapter *)adapter
                                                                  indexPath:(NSIndexPath *)indexPath
@@ -19,5 +19,10 @@
 
 - (CustomTableViewCell *)dequeueReusableCustomTableViewCellWithCellAdapter:(CellAdapter *)adapter
                                                                  indexPath:(NSIndexPath *)indexPath;
+
+- (CustomTableViewCell *)dequeueReusableCustomTableViewCellWithCellAdapter:(CellAdapter *)adapter
+                                                                  delegate:(id <CustomTableViewCellDelegate>)delegate
+                                                                 indexPath:(NSIndexPath *)indexPath ;
+
 
 @end

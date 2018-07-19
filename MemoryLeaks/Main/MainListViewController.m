@@ -11,7 +11,7 @@
 #import "MainListCell.h"
 #import "TestViewController.h"
 
-@interface MainListViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MainListViewController ()<UITableViewDelegate, UITableViewDataSource, CustomTableViewCellDelegate>
 
 @property (nonatomic , strong) UITableView *tableview;
 
@@ -70,6 +70,37 @@
 }
 
 
+#pragma mark - UITableViewDataSource & UITableViewDelegate
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return (UITableViewCell *)[tableView dequeueReusableCustomTableViewCellWithCellAdapter:self.adapterArray[indexPath.row] delegate:self indexPath:indexPath];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.tableViewShouldLoad ? self.adapterArray.count : 0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [(CustomTableViewCell *)[tableView cellForRowAtIndexPath:indexPath] clickEvent];
+}
+
+#pragma mark - CustomTableViewCellDelegate
+
+- (void)customTableViewCell:(CustomTableViewCell *)cell event:(id)eventData {
+    
+    if ([cell isKindOfClass:[MainListCell class]] && eventData) {
+        Item *item = eventData;
+        UIViewController *controller = [item.object new];
+        controller.title             = item.name;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
+
+
 #pragma mark - Lazy loading
 
 - (NSMutableArray *)adapterArray {
@@ -97,28 +128,5 @@
     }
     return _tableview;
 }
-
-#pragma mark - UITableViewDataSource & UITableViewDelegate
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return (UITableViewCell *)[tableView dequeueReusableCustomTableViewCellWithCellAdapter:self.adapterArray[indexPath.row] indexPath:indexPath controller:self];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return self.tableViewShouldLoad ? self.adapterArray.count : 0;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [(CustomTableViewCell *)[tableView cellForRowAtIndexPath:indexPath] clickEvent];
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleDefault;
-}
-
 
 @end

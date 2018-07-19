@@ -68,17 +68,4 @@
     }
 }
 
-
-- (void)clickEvent {
-    
-    if (self.cellAdapter.data) {
-//        Item *item = self.cellAdapter.data;
-//        UIViewController *controller = [[item.object class] new];
-//        controller.title             = item.name;
-//        [self.controller.navigationController pushViewController:controller animated:YES];
-    }
-}
-
-
-
 @end

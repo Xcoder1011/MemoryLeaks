@@ -46,8 +46,12 @@
 }
 
 - (void)clickEvent {
-
+    
+    if (self.cDelegate && [self.cDelegate respondsToSelector:@selector(customTableViewCell:event:)]) {
+        [self.cDelegate customTableViewCell:self event:self.cellAdapter.data];
+    }
 }
+
 
 
 /**
