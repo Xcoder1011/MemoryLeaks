@@ -1,0 +1,52 @@
+//
+//  TimerLeakViewController.m
+//  MemoryLeaks
+//
+//  Created by shangkun on 2018/7/19.
+//  Copyright © 2018年 wushangkun. All rights reserved.
+//
+
+#import "TimerLeakViewController.h"
+
+@interface TimerLeakViewController ()
+
+@property (nonatomic, strong) NSTimer *timer;
+
+@end
+
+@implementation TimerLeakViewController
+
+- (void)setup {
+    
+    [super setup];
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAct) userInfo:nil repeats:YES];
+}
+
+- (void)timerAct {
+    
+    NSLog(@"timer running....");
+}
+
+
+- (void)dealloc {
+    
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+
+//// 定时器销毁要写在viewWillDisappear
+//- (void)viewWillDisappear:(BOOL)animated {
+//
+//    [super viewWillDisappear:animated];
+//    [self.timer invalidate];
+//    self.timer = nil;
+//}
+
+// 因为 target:self ，也就是引用了当前viewController，导致控制器的引用计数加1，
+// 如果没有将这个NSTimer 销毁，它将一直保留该viewController，无法释放，也就不会调用dealloc方法。
+// 所以，需要在viewWillDisappear之前需要把控制器用到的NSTimer销毁。
+
+
+@end

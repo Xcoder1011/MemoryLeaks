@@ -58,7 +58,7 @@
     if (self.cellAdapter.data) {
         Item *item = self.cellAdapter.data;
         self.titleLabel.text = item.name;
-        self.subtitleLabel.text = [NSString stringWithFormat:@"%@", [item.object class]];
+        self.subtitleLabel.text = [NSString stringWithFormat:@"%@", NSStringFromClass(item.object)];
     }
     
     if (self.indexPath.row % 2) {

@@ -10,6 +10,7 @@
 #import "Item.h"
 #import "MainListCell.h"
 #import "TestViewController.h"
+#import "TimerLeakViewController.h"
 
 @interface MainListViewController ()<UITableViewDelegate, UITableViewDataSource, CustomTableViewCellDelegate>
 
@@ -18,6 +19,7 @@
 @property (nonatomic , strong) NSMutableArray *adapterArray;
 
 @property (nonatomic , assign) BOOL tableViewShouldLoad;
+
 @end
 
 @implementation MainListViewController
@@ -43,7 +45,7 @@
     
     NSArray * items = @[
                         [Item itemWithName:@"test" object:[TestViewController class]],
-                        [Item itemWithName:@"test" object:[TestViewController class]],
+                        [Item itemWithName:@"2. NSTimer的target" object:[TimerLeakViewController class]],
                         [Item itemWithName:@"test" object:[TestViewController class]],
                         [Item itemWithName:@"test" object:[TestViewController class]],
                         [Item itemWithName:@"test" object:[TestViewController class]],

@@ -30,6 +30,7 @@
 		BC21B33021007B9A005E0CB7 /* MainListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B32F21007B9A005E0CB7 /* MainListCell.m */; };
 		BC21B34021007C5D005E0CB7 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B33F21007C5D005E0CB7 /* TestViewController.m */; };
 		BC21B34221007DB5005E0CB7 /* huakangshaonv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC21B34121007DB5005E0CB7 /* huakangshaonv.ttf */; };
+		BC21B3452100A0D7005E0CB7 /* TimerLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		BC21B33E21007C5D005E0CB7 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		BC21B33F21007C5D005E0CB7 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		BC21B34121007DB5005E0CB7 /* huakangshaonv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = huakangshaonv.ttf; sourceTree = "<group>"; };
+		BC21B3432100A0D7005E0CB7 /* TimerLeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerLeakViewController.h; sourceTree = "<group>"; };
+		BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerLeakViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +239,8 @@
 			children = (
 				BC21B33E21007C5D005E0CB7 /* TestViewController.h */,
 				BC21B33F21007C5D005E0CB7 /* TestViewController.m */,
+				BC21B3432100A0D7005E0CB7 /* TimerLeakViewController.h */,
+				BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				BC21B32D21007B7D005E0CB7 /* Item.m in Sources */,
 				BC21B32721007AF8005E0CB7 /* CustomFullViewController.m in Sources */,
 				BC21B32621007AF8005E0CB7 /* CustomNormalViewController.m in Sources */,
+				BC21B3452100A0D7005E0CB7 /* TimerLeakViewController.m in Sources */,
 				BC1EFA062100784100B8FC9D /* BaseFullContentViewController.m in Sources */,
 				BC1EF9FE2100784100B8FC9D /* UIView+Frame.m in Sources */,
 				BC21B33021007B9A005E0CB7 /* MainListCell.m in Sources */,
