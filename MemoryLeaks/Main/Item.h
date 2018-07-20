@@ -19,7 +19,8 @@
 
 @interface Student : NSObject
 
-@property (nonatomic , weak) id <StudentDelegate> delegate;
+@property (nonatomic , strong) id <StudentDelegate> delegate;
+//@property (nonatomic , weak) id <StudentDelegate> delegate;
 
 @end
 

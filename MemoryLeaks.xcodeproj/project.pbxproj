@@ -37,6 +37,8 @@
 		BC507B722100DF8800680130 /* AFNetWorkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B712100DF8800680130 /* AFNetWorkingViewController.m */; };
 		BC507B752100E89000680130 /* ParticleSprayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B732100E89000680130 /* ParticleSprayController.m */; };
 		BC507B782100E8A600680130 /* SKEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B762100E8A600680130 /* SKEmitterLayer.m */; };
+		BC507B7B2101D82B00680130 /* MapLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B7A2101D82B00680130 /* MapLeakViewController.m */; };
+		BC507B7E2101DD8D00680130 /* LargeFrequencyCycleController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B7D2101DD8D00680130 /* LargeFrequencyCycleController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,10 @@
 		BC507B742100E89000680130 /* ParticleSprayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSprayController.h; sourceTree = "<group>"; };
 		BC507B762100E8A600680130 /* SKEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEmitterLayer.m; sourceTree = "<group>"; };
 		BC507B772100E8A600680130 /* SKEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEmitterLayer.h; sourceTree = "<group>"; };
+		BC507B792101D82B00680130 /* MapLeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapLeakViewController.h; sourceTree = "<group>"; };
+		BC507B7A2101D82B00680130 /* MapLeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapLeakViewController.m; sourceTree = "<group>"; };
+		BC507B7C2101DD8D00680130 /* LargeFrequencyCycleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LargeFrequencyCycleController.h; sourceTree = "<group>"; };
+		BC507B7D2101DD8D00680130 /* LargeFrequencyCycleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LargeFrequencyCycleController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +272,10 @@
 				BC507B712100DF8800680130 /* AFNetWorkingViewController.m */,
 				BC507B742100E89000680130 /* ParticleSprayController.h */,
 				BC507B732100E89000680130 /* ParticleSprayController.m */,
+				BC507B792101D82B00680130 /* MapLeakViewController.h */,
+				BC507B7A2101D82B00680130 /* MapLeakViewController.m */,
+				BC507B7C2101DD8D00680130 /* LargeFrequencyCycleController.h */,
+				BC507B7D2101DD8D00680130 /* LargeFrequencyCycleController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -401,6 +411,8 @@
 				BC1EF9D12100408B00B8FC9D /* main.m in Sources */,
 				BC1EFA002100784100B8FC9D /* CustomTableViewCell.m in Sources */,
 				BC1EFA042100784100B8FC9D /* BaseNavigationController.m in Sources */,
+				BC507B7B2101D82B00680130 /* MapLeakViewController.m in Sources */,
+				BC507B7E2101DD8D00680130 /* LargeFrequencyCycleController.m in Sources */,
 				BC507B6F2100D9C400680130 /* SKNetworking.m in Sources */,
 				BC507B782100E8A600680130 /* SKEmitterLayer.m in Sources */,
 				BC21B3482100A603005E0CB7 /* DelegateLeakController.m in Sources */,

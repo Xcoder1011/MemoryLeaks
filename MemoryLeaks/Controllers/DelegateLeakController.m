@@ -25,18 +25,8 @@
     Student *stu1 = [[Student alloc] init];
     stu1.delegate = self;
     _stu = stu1;
-    
-    
-    /*
-     
-    self 强引用 stu，
-     
-    而stu的delegate 属性指向 self，
-     
-    delegate是用strong修饰的, 所以 stu 也会强引用 self
-     
-     */
 }
+
 
 //- (BOOL)willDealloc {
 //
@@ -47,8 +37,17 @@
 //    return YES;
 //}
 
-
 @end
+
+/*
+ 
+ self 强引用 stu，
+ 
+ 而stu的delegate 属性指向 self，
+ 
+ delegate是用strong修饰的, 所以 stu 也会强引用 self
+ 
+ */
 
 
 /*
@@ -60,3 +59,7 @@
  因为weak修饰的变量在释放后自动为指向nil，防止不安全的野指针存在
  
  */
+
+
+
+

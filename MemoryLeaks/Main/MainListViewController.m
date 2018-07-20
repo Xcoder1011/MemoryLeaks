@@ -14,12 +14,15 @@
 #import "BlockLeakViewController.h"
 #import "AFNetWorkingViewController.h"
 #import "ParticleSprayController.h"
+#import "MapLeakViewController.h"
+#import "LargeFrequencyCycleController.h"
+
 
 @interface MainListViewController ()<UITableViewDelegate, UITableViewDataSource, CustomTableViewCellDelegate>
 
 @property (nonatomic , strong) UITableView *tableview;
 
-@property (nonatomic , strong) NSMutableArray *adapterArray;
+@property (nonatomic , strong) NSMutableArray <CellAdapter *> *adapterArray;
 
 @property (nonatomic , assign) BOOL tableViewShouldLoad;
 
@@ -52,9 +55,8 @@
                         [Item itemWithName:@"3. Block" object:[BlockLeakViewController class]],
                         [Item itemWithName:@"4. AFHTTPSessionManager" object:[AFNetWorkingViewController class]],
                         [Item itemWithName:@"5. 非OC对象" object:[ParticleSprayController class]],
-                        [Item itemWithName:@"6. 地图类处理" object:[BlockLeakViewController class]],
-                        [Item itemWithName:@"7. 大次数循环内存暴涨" object:[BlockLeakViewController class]],
-                        [Item itemWithName:@"8. 3DTouch Pop" object:[BlockLeakViewController class]],
+                        [Item itemWithName:@"6. 地图类处理" object:[MapLeakViewController class]],
+                        [Item itemWithName:@"7. 大次数循环内存暴涨" object:[LargeFrequencyCycleController class]],
                         ];
     
     for (int i = 0; i < items.count; i ++) {

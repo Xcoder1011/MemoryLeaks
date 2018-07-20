@@ -19,18 +19,52 @@
 
     [super setup];
     
-//    self.contentView.backgroundColor = [UIColor whiteColor];
-//    self.titleView.hidden = YES;
-//    [self emitterAnimationWithImage: [UIImage imageNamed:@"Snip20170418_4.png"]
-//                      startPosition:CGPointMake(self.contentView.centerX , 0)
-//                           lifetime:5.0
-//                  emittersCountRate:0.8
-//                           cellSize:CGSizeMake(1.6, 1.6)];
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.titleView.hidden = YES;
+    [self emitterAnimationWithImage: [UIImage imageNamed:@"Snip20170418_4.png"]
+                      startPosition:CGPointMake(self.contentView.centerX , 0)
+                           lifetime:5.0
+                  emittersCountRate:0.8
+                           cellSize:CGSizeMake(1.6, 1.6)];
     
-    [self filter];
+    // 非OC对象需要手动内存释放
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // [self run_C_language_code];
+        // [self filter];
+    });
 }
 
-// 非OC对象需要手动内存释放
+// C数据类型 造成内存爆增
+
+- (void)run_C_language_code {
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        int i = 0;
+        while (i < 50) {
+            int size = 1 * 1024;
+            char *info = calloc(100, size);
+            memset(info, 1, size);
+            
+            info = valloc(size);
+            memset(info, 1, size);
+            
+            info = malloc(size);
+            memset(info, 1, size);
+            
+            size = 100 * 1024;
+            char *info2 = realloc(info, size);
+            memset(info2, 1, size);
+            
+            info = malloc(size);
+            memset(info, 1, size);
+            ++i;
+        }
+    });
+}
+
+
+// CGImageRef类型变量 没有release
 
 - (void)filter {
     
@@ -62,7 +96,7 @@
     
     // _imageView.image = endImg;
     
-    CGImageRelease(ref);
+    CGImageRelease(ref); // 非OC对象需要手动内存释放
 }
 
 

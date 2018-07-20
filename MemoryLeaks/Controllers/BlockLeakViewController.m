@@ -137,7 +137,7 @@ typedef void(^Block2)(void);
 
 
 /*
- * strongself的用处
+ *  @weakify的用处
  */
 - (void)weakify_strongify_Test {
     
