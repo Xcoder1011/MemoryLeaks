@@ -1,3 +1,8 @@
+
+https://github.com/Xcoder1011/MemoryLeaks/blob/master/screenshots/1234567.png
+
+![image.png](https://github.com/Xcoder1011/MemoryLeaks/blob/master/screenshots/1234567.png)
+
 # 一 、背景
 
 平常我们都会用 Instrument 的 Leaks / Allocations 或其他一些开源库进行内存泄露的排查，但是检查过程非常繁琐，而且不清晰,最主要的是Abandoned memory不会被检测出来。
@@ -30,7 +35,8 @@
 - 无法及时得知泄露，得专门做一遍上述操作，十分繁琐
 
 # 二 、MLeaksFinder
-###简介
+### 简介
+
 MLeaksFinder 是 WeRead 团队开源的iOS内存泄漏检测工具，[wereadteam博客](https://link.jianshu.com/?t=http://wereadteam.github.io)，[GitHub](https://link.jianshu.com/?t=https://github.com/Tencent/MLeaksFinder)。
 
 
@@ -45,7 +51,7 @@ MLeaksFinder 具备以下优点：
 - 内存泄露发现及时，更改完代码后一运行即能发现（这点很重要，你马上就能意识到哪里写错了）
 - 精准，能准确地告诉你哪个对象没被释放
 
-###原理
+### 原理
 
 MLeaksFinder 为基类 NSObject 添加一个方法 -willDealloc 方法，该方法的作用是，先用一个弱指针指向 self，并在一小段时间(2秒)后，通过这个弱指针调用 -assertNotDealloc，而 -assertNotDealloc 主要作用是直接弹框提醒该对象可能存在内存泄漏。
 
@@ -134,6 +140,6 @@ MLeaksFinder目前只检测 ViewController 跟 View 对象。为此，MLeaksFind
 
 
 
-# Demo地址：
+# 文档：
 
-https://github.com/Xcoder1011/MemoryLeaks
+https://www.jianshu.com/p/8579be32a538
