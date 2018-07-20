@@ -1,6 +1,6 @@
 
 
-![image.png](https://github.com/Xcoder1011/MemoryLeaks/blob/master/screenshots/1234567.png)
+![image.png](https://github.com/Xcoder1011/MemoryLeaks/blob/master/screenshots/memoryleaktest1.png)
 
 # 一 、背景
 
