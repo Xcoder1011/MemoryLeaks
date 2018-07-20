@@ -21,11 +21,10 @@
     
     NSString *url = @"http://dev.cjjl.chelun.com/xc_v1/SuperCoachApi/tasks?_lat=37.78583401977729&_lng=-122.4064169999999&_token=d22ec3d13ca340b8bb56516125832da8&apiVersion=4&appversion=4.2.4&channelid=80000&deviceid=84599c1b55b66adc7a232a76b41c28f0f8663860&os=ios&packagename=com.xueche.supercoach&productId=28&usertype=2";
     
-//    AFHTTPSessionManager * manager = [self.class sessionManager];
-    
     for (NSInteger i = 0 ; i < 5; i ++) {
         
         AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+        // AFHTTPSessionManager * manager = [self.class sessionManager];
         
         [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
@@ -38,7 +37,6 @@
     }
 }
 
-- willde
 
 
 /**

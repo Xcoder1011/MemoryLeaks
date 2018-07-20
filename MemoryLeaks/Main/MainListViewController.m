@@ -55,8 +55,6 @@
                         [Item itemWithName:@"6. 地图类处理" object:[BlockLeakViewController class]],
                         [Item itemWithName:@"7. 大次数循环内存暴涨" object:[BlockLeakViewController class]],
                         [Item itemWithName:@"8. 3DTouch Pop" object:[BlockLeakViewController class]],
-                        [Item itemWithName:@"6. 大次数循环内存暴涨" object:[BlockLeakViewController class]]
-
                         ];
     
     for (int i = 0; i < items.count; i ++) {
