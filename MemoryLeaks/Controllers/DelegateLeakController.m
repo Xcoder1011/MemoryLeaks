@@ -38,14 +38,14 @@
      */
 }
 
-- (BOOL)willDealloc {
-    
-    if (![super willDealloc]) {
-        return NO;
-    }
-    MLCheck(self.viewModel);
-    return YES;
-}
+//- (BOOL)willDealloc {
+//
+//    if (![super willDealloc]) {
+//        return NO;
+//    }
+//    MLCheck(self.viewModel);
+//    return YES;
+//}
 
 
 @end
