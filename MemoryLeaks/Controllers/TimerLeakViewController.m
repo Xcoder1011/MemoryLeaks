@@ -7,10 +7,12 @@
 //
 
 #import "TimerLeakViewController.h"
+#import "SKTimer.h"
 
 @interface TimerLeakViewController ()
 
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) SKTimer *timer1;
 
 @end
 
@@ -20,7 +22,13 @@
     
     [super setup];
     
+
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAct) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    
+    
+    //_timer1 = [SKTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAct) userInfo:nil repeats:YES];
+   
 }
 
 - (void)timerAct {

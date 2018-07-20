@@ -12,6 +12,8 @@
 #import "TimerLeakViewController.h"
 #import "DelegateLeakController.h"
 #import "BlockLeakViewController.h"
+#import "AFNetWorkingViewController.h"
+#import "ParticleSprayController.h"
 
 @interface MainListViewController ()<UITableViewDelegate, UITableViewDataSource, CustomTableViewCellDelegate>
 
@@ -48,9 +50,13 @@
                         [Item itemWithName:@"1. Delegate" object:[DelegateLeakController class]],
                         [Item itemWithName:@"2. NSTimer" object:[TimerLeakViewController class]],
                         [Item itemWithName:@"3. Block" object:[BlockLeakViewController class]],
-                        [Item itemWithName:@"test" object:[BlockLeakViewController class]],
-                        [Item itemWithName:@"test" object:[BlockLeakViewController class]],
-                        [Item itemWithName:@"test" object:[BlockLeakViewController class]]
+                        [Item itemWithName:@"4. AFHTTPSessionManager" object:[AFNetWorkingViewController class]],
+                        [Item itemWithName:@"5. 非OC对象" object:[ParticleSprayController class]],
+                        [Item itemWithName:@"6. 地图类处理" object:[BlockLeakViewController class]],
+                        [Item itemWithName:@"7. 大次数循环内存暴涨" object:[BlockLeakViewController class]],
+                        [Item itemWithName:@"8. 3DTouch Pop" object:[BlockLeakViewController class]],
+                        [Item itemWithName:@"6. 大次数循环内存暴涨" object:[BlockLeakViewController class]]
+
                         ];
     
     for (int i = 0; i < items.count; i ++) {

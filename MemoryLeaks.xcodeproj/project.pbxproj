@@ -32,6 +32,11 @@
 		BC21B3452100A0D7005E0CB7 /* TimerLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */; };
 		BC21B3482100A603005E0CB7 /* DelegateLeakController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B3472100A603005E0CB7 /* DelegateLeakController.m */; };
 		BC21B34B2100B8FF005E0CB7 /* BlockLeakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B34A2100B8FF005E0CB7 /* BlockLeakViewController.m */; };
+		BC21B3522100D7D8005E0CB7 /* SKTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC21B3502100D7D8005E0CB7 /* SKTimer.m */; };
+		BC507B6F2100D9C400680130 /* SKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B6E2100D9C400680130 /* SKNetworking.m */; };
+		BC507B722100DF8800680130 /* AFNetWorkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B712100DF8800680130 /* AFNetWorkingViewController.m */; };
+		BC507B752100E89000680130 /* ParticleSprayController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B732100E89000680130 /* ParticleSprayController.m */; };
+		BC507B782100E8A600680130 /* SKEmitterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC507B762100E8A600680130 /* SKEmitterLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +90,16 @@
 		BC21B3472100A603005E0CB7 /* DelegateLeakController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelegateLeakController.m; sourceTree = "<group>"; };
 		BC21B3492100B8FF005E0CB7 /* BlockLeakViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockLeakViewController.h; sourceTree = "<group>"; };
 		BC21B34A2100B8FF005E0CB7 /* BlockLeakViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockLeakViewController.m; sourceTree = "<group>"; };
+		BC21B34E2100D7D8005E0CB7 /* SKTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTimer.h; sourceTree = "<group>"; };
+		BC21B3502100D7D8005E0CB7 /* SKTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTimer.m; sourceTree = "<group>"; };
+		BC507B6D2100D9C400680130 /* SKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworking.h; sourceTree = "<group>"; };
+		BC507B6E2100D9C400680130 /* SKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworking.m; sourceTree = "<group>"; };
+		BC507B702100DF8800680130 /* AFNetWorkingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetWorkingViewController.h; sourceTree = "<group>"; };
+		BC507B712100DF8800680130 /* AFNetWorkingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetWorkingViewController.m; sourceTree = "<group>"; };
+		BC507B732100E89000680130 /* ParticleSprayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticleSprayController.m; sourceTree = "<group>"; };
+		BC507B742100E89000680130 /* ParticleSprayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSprayController.h; sourceTree = "<group>"; };
+		BC507B762100E8A600680130 /* SKEmitterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEmitterLayer.m; sourceTree = "<group>"; };
+		BC507B772100E8A600680130 /* SKEmitterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEmitterLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +149,7 @@
 				BC21B33121007BDF005E0CB7 /* Controllers */,
 				BC21B32121007AF8005E0CB7 /* CustomBaseClass */,
 				BC1EF9DD2100784100B8FC9D /* UI-Component */,
+				BC21B34C2100D7D8005E0CB7 /* Tools */,
 				BC1EF9DB2100774400B8FC9D /* Other */,
 			);
 			path = MemoryLeaks;
@@ -246,8 +262,25 @@
 				BC21B3442100A0D7005E0CB7 /* TimerLeakViewController.m */,
 				BC21B3492100B8FF005E0CB7 /* BlockLeakViewController.h */,
 				BC21B34A2100B8FF005E0CB7 /* BlockLeakViewController.m */,
+				BC507B702100DF8800680130 /* AFNetWorkingViewController.h */,
+				BC507B712100DF8800680130 /* AFNetWorkingViewController.m */,
+				BC507B742100E89000680130 /* ParticleSprayController.h */,
+				BC507B732100E89000680130 /* ParticleSprayController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BC21B34C2100D7D8005E0CB7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BC21B34E2100D7D8005E0CB7 /* SKTimer.h */,
+				BC21B3502100D7D8005E0CB7 /* SKTimer.m */,
+				BC507B6D2100D9C400680130 /* SKNetworking.h */,
+				BC507B6E2100D9C400680130 /* SKNetworking.m */,
+				BC507B772100E8A600680130 /* SKEmitterLayer.h */,
+				BC507B762100E8A600680130 /* SKEmitterLayer.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		DD4C97115AF572FE2AD0F344 /* Pods */ = {
@@ -363,15 +396,20 @@
 				BC21B32A21007B39005E0CB7 /* MainListViewController.m in Sources */,
 				BC1EF9C62100408A00B8FC9D /* ViewController.m in Sources */,
 				BC1EFA032100784100B8FC9D /* BaseViewController.m in Sources */,
+				BC507B752100E89000680130 /* ParticleSprayController.m in Sources */,
 				BC1EF9FC2100784100B8FC9D /* HexColors.m in Sources */,
 				BC1EF9D12100408B00B8FC9D /* main.m in Sources */,
 				BC1EFA002100784100B8FC9D /* CustomTableViewCell.m in Sources */,
 				BC1EFA042100784100B8FC9D /* BaseNavigationController.m in Sources */,
+				BC507B6F2100D9C400680130 /* SKNetworking.m in Sources */,
+				BC507B782100E8A600680130 /* SKEmitterLayer.m in Sources */,
 				BC21B3482100A603005E0CB7 /* DelegateLeakController.m in Sources */,
 				BC1EFA012100784100B8FC9D /* UITableView+CustomTableViewCell.m in Sources */,
 				BC1EF9C32100408A00B8FC9D /* AppDelegate.m in Sources */,
 				BC1EFA052100784100B8FC9D /* BaseContentViewController.m in Sources */,
+				BC507B722100DF8800680130 /* AFNetWorkingViewController.m in Sources */,
 				BC1EFA022100784100B8FC9D /* CellAdapter.m in Sources */,
+				BC21B3522100D7D8005E0CB7 /* SKTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,15 @@
 
 #import "BlockLeakViewController.h"
 
+typedef void(^Block2)(void);
+
 @interface BlockLeakViewController ()
 
 @property (nonatomic, copy) dispatch_block_t block;
 
+@property (nonatomic, copy) void (^block1)(void);
+
+@property (nonatomic, copy) Block2 block2;
 
 @end
 
@@ -26,23 +31,14 @@
 
 - (void)rightItemClick:(id)sender {
     
-    [self strongselfTest];
+    [self simpleBlockTest];
     
-//    static int index = 0;
-//
-//    if (index == 0) {
-//        [self simpleBlockTest];
-//
-//    } else if (index == 1) {
-//        [self notSimpleWeakTest];
-//
-//    } else if (index == 2) {
-//        [self strongselfTest];
-//    }
-//
-//    index ++;
-//    if (index == 3) index = 0;
+    //[self notSimpleWeakTest];
     
+    //[self strongselfTest];
+    
+    //[self weakify_strongify_Test];
+
 }
 
 /*
@@ -112,6 +108,7 @@
                 NSLog(@"++++++++++++++++ title is %@",strongSelf.title);
                 // strongSelf的 生命周期也只在当前block的作用域.
                 // 当这个block结束, strongSelf随之也就被释放了
+                // 当发现可能的内存泄漏对象并给出 alert 之后，MLeaksFinder 会进一步地追踪该对象的生命周期，并在该对象释放时给出 Object Deallocated 的 alert。
             }
         });
     };

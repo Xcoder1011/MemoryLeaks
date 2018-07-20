@@ -8,6 +8,7 @@
 
 #import "DelegateLeakController.h"
 #import "Item.h"
+#import "NSObject+MemoryLeak.h"
 
 @interface DelegateLeakController () <StudentDelegate>
 
@@ -36,6 +37,16 @@
      
      */
 }
+
+- (BOOL)willDealloc {
+    
+    if (![super willDealloc]) {
+        return NO;
+    }
+    MLCheck(self.viewModel);
+    return YES;
+}
+
 
 @end
 
